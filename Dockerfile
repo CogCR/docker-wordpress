@@ -3,6 +3,11 @@ FROM wordpress:4-php7.1-fpm-alpine
 RUN apk update \
 && apk upgrade \
 && apk --no-cache add openssl 
+&& apk add clamav
+&& rc-update add freshclam
+&& rc-service freshclam start
+&& rc-update add clamd
+&& rc-service clamd start
 
 ENV PHPREDIS_VERSION 3.1.2
 ENV WPFPM_FLAG WPFPM_
