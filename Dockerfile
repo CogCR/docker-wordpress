@@ -9,7 +9,7 @@ RUN apk update \
 && rc-update add clamd
 && rc-service clamd start
 
-ENV PHPREDIS_VERSION 3.1.2
+ENV PHPREDIS_VERSION 4.1.1
 ENV WPFPM_FLAG WPFPM_
 ENV PAGER more
 
