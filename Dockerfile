@@ -1,6 +1,8 @@
 FROM wordpress:4-php7.1-fpm-alpine
 
-RUN apk --no-cache add openssl
+RUN apk update \
+&& apk upgrade \
+&& apk --no-cache add openssl 
 
 ENV PHPREDIS_VERSION 3.1.2
 ENV WPFPM_FLAG WPFPM_
